@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Timestamp Notes",
+    "version": "0.1",
+    "description": "Mark timestamps on YouTube videos with notes and view them later.",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://www.youtube.com/*",
+        "https://*.youtube.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ],
+            "css": [
+                "contentStyle.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
