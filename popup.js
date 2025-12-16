@@ -1,4 +1,3 @@
-// popup.js - improved global search with match-count and highlight
 document.addEventListener('DOMContentLoaded', () => {
     const KEY = 'notesByVideo';
     const list = document.getElementById('list');
