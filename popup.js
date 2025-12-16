@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function thumbUrl(vid) { return `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`; }
     function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
-    // helper to highlight query inside text (simple, case-insensitive)
     function highlight(text, q) {
         if (!q) return escapeHtml(text);
         try {
@@ -159,3 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.storage.local.remove([KEY], () => { list.innerHTML = '<div class="empty">No notes yet — add some from YouTube.</div>'; });
     });
 });
+
